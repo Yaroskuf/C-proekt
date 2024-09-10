@@ -1,9 +1,7 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
-
-//X-ÊÎË-ÂÎ ÑÒĞÎÊ, Y-ÊÎË-ÂÎ ÑÒÎËÁÖÎÂ
-
-int main(){
+int main() {
 int x;
 int y;
 int a;
@@ -21,8 +19,7 @@ if (x<=0 or y<=0) {
 int m[y][x];
 int k=0;
 int h=0;
-int no=0;
-float srz=0.0, ma=0.0;
+int z[k];
 /*for (int i = 0; i < y; i++)
 {
     for (int j = 0; j < x; j++) 
@@ -40,47 +37,20 @@ for(int j = 0; j < x; j++){
 		}	
 }
 }
-
-
-
-
-
-//for (int i=0; i<x; i++){
-//	for (int j=0; j<y; j++){
-//		m[i][j]=i+j+2;
-//	}
-//}
-
-
-
-
-for (int i = 0; i < y; i++)
-{
-    for (int j = 0; j < x; j++)
-        cout << m[i][j] << " ";
-     cout << endl;
-}
-
-
-
-
-for (int i=0; i<y; i++) { //âûñîòà
-	for (int j=0; j<x; j++) { //øèğèíà
-			srz+=m[i][j];
-			k+=1;
-		if (k>y-1) {	
-			ma=max(srz/x,ma);
-			if (ma<=srz/x) {
-				no=i;
-			}
+for (int i=0; i<y; i++){
+	for (int j=0; j<x; j++){
+		if ((m[i][j]<0 and m[i][j+1]>0) or (m[i][j]>0 and m[i][j+1]<0)) {
+			h+=1;
+		}
+		if (h==x-1){
+			cout <<  i << endl;
+		}
+		k+=1;
+		if (k==x-1){
+			h=0;
 			k=0;
-			srz=0;
-		{	
+		}
 	}
 }
-}
-}
-
-cout << "String: " << no << " Srednee: " << ma;
 return 0;
 }
