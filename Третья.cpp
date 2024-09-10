@@ -7,7 +7,14 @@ int main() {
 	cout << "Enter number of values in list: ";
 	cin >> y;
 	int i, a, m[y];
-	
+	if (y<0) {
+		cout << "Error: list lenght must be > 0";
+		return 0;
+	}
+	if (y==0) {
+		cout << "Error: list lenght must be > 0";
+		return 0;
+}
 	for(i = 0; i < y; i++)
   	{
 	  	cout << i+1 << ": ";

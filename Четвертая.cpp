@@ -8,7 +8,14 @@ int main() {
 	cin >> y;
 	int i, m[y], a, z;
 	int k=0;
-	
+if (y<0) {
+	cout << "Error: list lenght must be > 0";
+	return 0;
+}
+if (y==0) {
+	cout << "Error: list lenght must be > 0";
+	return 0;
+}
 	for (i; i<y; i++) {
 		cout << i << ": ";
 		scanf("%d", &a);
@@ -20,8 +27,13 @@ for (int j=0; j<y; j++){
 		k+=j;
 	}
 }
+if (k!=0) {
 
 cout << "Sum: " << k;
-return 0;
 }
+else {
+	cout << "No such elements";
+}
+return 0;
 
+}
